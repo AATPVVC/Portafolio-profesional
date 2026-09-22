@@ -1,49 +1,253 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Angel Alvarez">
-    <title>Angel Alvarez (Portafolio Profesional)</title>
+    <title>Portafolio profesional-Angel Alvarez</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="static/css/style.css">
 </head>
-
 <body>
-    <header class="nav">
-        <div class="logo">
-            <div class="logito">
-                <img src="static/images/logo casa1.png" alt="logotipo">
-            </div>
-           
-        </div>
-         <h1>Ángel Álvarez</h1>
-        <div class="botones-nav">
-            <button>Inicio</button>
-            <button>Projectos</button>
-            <button>Contacto</button>
-            <button>Habilidades</button>
-            <button>Lo que busco</button>
-        </div>
-    </header>
-    <main class="container">
-        <section class="arriba-derecha">
-            <h1>Ángel Álvarez</h1>
-            <h2>Desarrollador </h2>
-            <p>(Breve descripción)</p>
-        </section>
-        <section class="arriba-izquierda">
-            
-        </section>
-        <section class="centro">
 
+    <!-- Cursor personalizado -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="custom-cursor-follower" id="cursor-follower"></div>
+
+    <!-- Barra de progreso al hacer scroll -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Menú de navegación dinámico -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#hero" class="nav-logo">PORTA<span class="text-red">FOLIO</span></a>
+
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#hero" class="nav-link active-link">Inicio</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">Sobre mí</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link">Proyectos</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <!-- Botón de cambio de tema -->
+                <button class="theme-btn" id="themeBtn" aria-label="Cambiar tema">
+                    <i class="fa-solid me-moon" id="themeIcon"></i>
+                </button>
+                <!-- Botón menú hamburguesa -->
+                <div class="nav-toggle" id="navToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero section" id="hero">
+            <div class="hero-container container grid">
+                <div class="hero-data">
+                    <span class="hero-subtitle">Futuro desarrollador y diseñador web</span>
+                    <h1 class="hero-title">Hola, soy <span class="text-red glow-text">Angel Alvarez</span></h1>
+                    <p class="hero-description">Creando </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="btn btn-primary">Ver Proyectos <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn btn-outline">Contáctame</a>
+                    </div>
+                </div>
+                <div class="hero-img-container">
+                    <div class="hero-img-box">
+                        <i class="fa-solid fa-code hero-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contadores Animados -->
+        <section class="counters section bg-alt">
+            <div class="counters-container container grid">
+                <div class="counter-card reveal">
+                    <i class="fa-solid fa-folder-open text-red"></i>
+                    <h3 class="counter-number" data-target="23">0</h3>
+                    <p class="counter-label">Proyectos Finalizados</p>
+                </div>
+              
+                
+            </div>
+        </section>
+
+        <!-- Sobre Mí: Mostrar/Ocultar Info + Pestañas/Tabs -->
+        <section class="about section" id="about">
+            <h2 class="section-title reveal">Sobre <span class="text-red">Mí</span></h2>
+
+            <div class="about-container container">
+                <div class="about-intro reveal">
+                    <p>Soy un .</p>
+                    
+                    <!-- Contenido oculto / Toggle "Mostrar más" -->
+                    <div class="more-info-content hidden" id="moreInfo">
+                        <p>Especializado en JavaScript moderno, CSS avanzado y diseño UI/UX responsivo. Me enfoco en rendimiento, accesibilidad y animaciones fluidas para ofrecer la mejor experiencia de usuario.</p>
+                    </div>
+
+                    <!-- Botón Mostrar/Ocultar -->
+                    <button class="btn btn-outline btn-sm mt-1" id="toggleInfoBtn">
+                        <span id="btnText">Mostrar más información</span>
+                        <i class="fa-solid fa-chevron-down" id="btnIcon"></i>
+                    </button>
+                </div>
+
+                <!-- Cambio de contenido por Pestañas (Tabs) -->
+                <div class="tabs-wrapper reveal">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="skills">Habilidades</button>
+                        <button class="tab-btn" data-tab="experience">Experiencia</button>
+                        <button class="tab-btn" data-tab="education">Educación</button>
+                    </div>
+
+                    <div class="tab-contents">
+                        <!-- Tab Habilidades -->
+                        <div class="tab-content active" id="skills">
+                            <div class="skills-grid">
+                                <div class="skill-item"><span>HTML5 / CSS3</span><div class="bar"><div class="fill" style="width: 95%;"></div></div></div>
+                                <div class="skill-item"><span>JavaScript (ES6+)</span><div class="bar"><div class="fill" style="width: 88%;"></div></div></div>
+                                <div class="skill-item"><span>UI/UX Design</span><div class="bar"><div class="fill" style="width: 80%;"></div></div></div>
+                                <div class="skill-item"><span>Git / GitHub</span><div class="bar"><div class="fill" style="width: 85%;"></div></div></div>
+                            </div>
+                        </div>
+
+                        <!-- Tab Experiencia -->
+                        <div class="tab-content" id="experience">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <h4> Frontend Dev</h4>
+                                    <span>2023 - Presente</span>
+                                    <p>Liderazgo técnico en proyectos web interactivos.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h4>Web Designer & Dev</h4>
+                                    <span>2021 - 2023</span>
+                                    <p>Diseño y maquetación UI con animaciones avanzadas.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab Educación -->
+                        <div class="tab-content" id="education">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <h4>Ingeniería en Sistemas</h4>
+                                    <span>Universidad Tecnológica</span>
+                                </div>
+                                <div class="timeline-item">
+                                    <h4>Certificación Frontend Avanzado</h4>
+                                    <span>Academia Web</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de Proyectos + Filtros -->
+        <section class="portfolio section bg-alt" id="portfolio">
+            <h2 class="section-title reveal">Galería de <span class="text-red">Proyectos</span></h2>
+
+            <!-- Botones de Filtro -->
+            <div class="filter-buttons reveal">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                
+            </div>
+
+            <!-- Grilla / Galería de Proyectos -->
+            <div class="portfolio-grid container">
+                <!-- Proyecto 1 -->
+                <div class="portfolio-card reveal" data-category="web">
+                    <div class="card-img">
+                        <i class="fa-solid fa-laptop-code card-icon"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-tag">Primer proyecto</span>
+                        <h3>Dashboard Neón</h3>
+                        <button class="btn-link open-modal" data-title="Dashboard Neón" data-desc="Panel de control interactivo construido en JS moderno con gráficos en tiempo real y modo oscuro por defecto.">Ver Detalles <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="portfolio-card reveal" data-category="app">
+                    <div class="card-img">
+                        <i class="fa-solid fa-mobile-screen card-icon"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-tag">Segundo proyecto</span>
+                        <h3>Pagina informativa de Aula Vanguardia</h3>
+                        <button class="btn-link open-modal" data-title="Pagina informativa de Aula Vanguardia" data-desc="Aplicación móvil interactiva para seguimiento de entrenamiento y nutrición con animaciones dinámicas.">Ver Detalles <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+             
+            </div>
+        </section>
+
+        <!-- Formulario Interactivo -->
+        <section class="contact section" id="contact">
+            <h2 class="section-title reveal"><span class="text-red">Contactame</span></h2>
+
+            <div class="contact-container container reveal">
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="form-group">
+                        <input type="text" id="name" class="form-input" placeholder=" " required>
+                        <label for="name" class="form-label">Nombre</label>
+                        <span class="error-msg" id="nameError">El nombre es requerido</span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="email" class="form-input" placeholder=" " required>
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <span class="error-msg" id="emailError">Ingresa un correo válido</span>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="message" class="form-input" rows="4" placeholder=" " required></textarea>
+                        <label for="message" class="form-label">Mensaje</label>
+                        <span class="error-msg" id="messageError">Escribe un mensaje</span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Enviar Mensaje</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
         </section>
     </main>
 
-    <footer>
+    <!-- Modal / Ventana Emergente -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3 class="modal-title" id="modalTitle">Título del Proyecto</h3>
+            <p class="modal-body" id="modalDesc">Descripción detallada del proyecto seleccionado.</p>
+            <button class="btn btn-primary mt-1" id="modalOkBtn">Cerrar</button>
+        </div>
+    </div>
 
+    <!-- Botón Volver Arriba -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Angel Alvarez. Todos los derechos reservados.</p>
+        </div>
     </footer>
+
     <script src="static/js/script.js"></script>
 </body>
-
 </html>
