@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Angel Alvarez">
     <title>Portafolio profesional-Angel Alvarez</title>
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="static/css/style.css">
 </head>
+
 <body>
 
     <!-- Cursor personalizado -->
@@ -54,10 +56,12 @@
                 <div class="hero-data">
                     <span class="hero-subtitle">Futuro desarrollador y diseñador web</span>
                     <h1 class="hero-title">Hola, soy <span class="text-red glow-text">Angel Álvarez</span></h1>
-                    <p class="hero-description">Estudiante de programación.Con enfoque de las bases de html,css y js </p>
-                    
+                    <p class="hero-description">Estudiante de programación.Con enfoque de las bases de html,css y js
+                    </p>
+
                     <div class="hero-buttons">
-                        <a href="#portfolio" class="btn btn-primary">Ver Proyectos <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#portfolio" class="btn btn-primary">Ver Proyectos <i
+                                class="fa-solid fa-arrow-right"></i></a>
                         <a href="#contact" class="btn btn-outline">Contáctame</a>
                     </div>
                 </div>
@@ -77,8 +81,8 @@
                     <h3 class="counter-number" data-target="23">0</h3>
                     <p class="counter-label">Proyectos Finalizados</p>
                 </div>
-              
-                
+
+
             </div>
         </section>
 
@@ -89,10 +93,11 @@
             <div class="about-container container">
                 <div class="about-intro reveal">
                     <p>Soy un estudiante .</p>
-                    
+
                     <!-- Contenido oculto / Toggle "Mostrar más" -->
                     <div class="more-info-content hidden" id="moreInfo">
-                        <p>Especializado en CSS. Me enfoco en el diseño de mis paginas, para ofrecer la mejor experiencia de usuario en el apartado visual.</p>
+                        <p>Especializado en CSS. Me enfoco en el diseño de mis paginas, para ofrecer la mejor
+                            experiencia de usuario en el apartado visual.</p>
                     </div>
 
                     <!-- Botón Mostrar/Ocultar -->
@@ -106,7 +111,7 @@
                 <div class="tabs-wrapper reveal">
                     <div class="tab-buttons">
                         <button class="tab-btn active" data-tab="skills">Habilidades</button>
-                        
+
                         <button class="tab-btn" data-tab="education">Educación</button>
                     </div>
 
@@ -114,13 +119,25 @@
                         <!-- Tab Habilidades -->
                         <div class="tab-content active" id="skills">
                             <div class="skills-grid">
-                                <div class="skill-item"><span>HTML5 / CSS3</span><div class="bar"><div class="fill" style="width: 80%;"></div></div></div>
-                                <div class="skill-item"><span>JavaScript</span><div class="bar"><div class="fill" style="width: 30%;"></div></div></div>
-                                <div class="skill-item"><span>Git / GitHub</span><div class="bar"><div class="fill" style="width: 65%;"></div></div></div>
+                                <div class="skill-item"><span>HTML5 / CSS3</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item"><span>JavaScript</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 30%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item"><span>Git / GitHub</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 65%;"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        
+
 
                         <!-- Tab Educación -->
                         <div class="tab-content" id="education">
@@ -139,40 +156,40 @@
 
         <!-- Galería de Proyectos + Filtros -->
         <section class="portfolio section bg-alt" id="portfolio">
-            <h2 class="section-title reveal">Galería de <span class="text-red">Proyectos</span></h2>
-
-            <!-- Botones de Filtro -->
-            <div class="filter-buttons reveal">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                
-            </div>
+            <h2 class="section-title reveal">Proyectos de <span class="text-red">Referencia</span></h2>
 
             <!-- Grilla / Galería de Proyectos -->
             <div class="portfolio-grid container">
                 <!-- Proyecto 1 -->
                 <div class="portfolio-card reveal" data-category="web">
                     <div class="card-img">
-                        <i class="fa-solid fa-laptop-code card-icon"></i>
+                        <img class="card-img" src="static/images/tacoPalace.png" alt="Taco palace">
                     </div>
                     <div class="card-info">
                         <span class="card-tag">Primer proyecto</span>
-                        <h3>Dashboard Neón</h3>
-                        <button class="btn-link open-modal" data-title="Dashboard Neón" data-desc="Panel de control interactivo construido en JS moderno con gráficos en tiempo real y modo oscuro por defecto.">Ver Detalles <i class="fa-solid fa-arrow-right"></i></button>
+                        <h3>Taco Palace</h3>
+                        <button class="btn-link open-modal" data-title="Dashboard Neón"
+                            data-desc="Este fue pagina de prueba para probar  las habilididades de los estudiantes para ver podian replicar en poco tiempo y sin I.A.">Ver
+                            Detalles <i class="fa-solid fa-arrow-right"></i></button>
+                        <a href="#" class="btn btn-primary">Ver Pagina <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <!-- Proyecto 2 -->
                 <div class="portfolio-card reveal" data-category="app">
                     <div class="card-img">
-                        <i class="fa-solid fa-mobile-screen card-icon"></i>
+                        <img class="card-img" src="static/images/AulaVanguardia.png" alt="AulaVanguardia">
                     </div>
                     <div class="card-info">
                         <span class="card-tag">Segundo proyecto</span>
                         <h3>Pagina informativa de Aula Vanguardia</h3>
-                        <button class="btn-link open-modal" data-title="Pagina informativa de Aula Vanguardia" data-desc="Aplicación móvil interactiva para seguimiento de entrenamiento y nutrición con animaciones dinámicas.">Ver Detalles <i class="fa-solid fa-arrow-right"></i></button>
+                        <button class="btn-link open-modal" data-title="Pagina informativa de Aula Vanguardia"
+                            data-desc="Esta es una pagina informativa en donde se proporciona lo que fue Aula Vanguardia como proyecto.">Ver
+                            Detalles <i class="fa-solid fa-arrow-right"></i></button>
+                        <a href="https://aatpvvc.github.io/AulaVanguardia/" class="btn btn-primary">Ver Pagina <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
-             
+
             </div>
         </section>
 
@@ -232,4 +249,5 @@
 
     <script src="static/js/script.js"></script>
 </body>
+
 </html>
